@@ -1,0 +1,6 @@
+﻿  EngineObjects.h
+  main.cpp
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(24,1): warning C4305: -=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(30,1): warning C4305: +=: усечение из "double" в "float"
+  Создание кода...
+  Dybina.vcxproj -> C:\Users\croune\source\repos\Dybina\x64\Debug\Dybina.exe
