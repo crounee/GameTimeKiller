@@ -1,6 +1,11 @@
-﻿  EngineObjects.h
-  main.cpp
-C:\Users\croune\source\repos\Dybina\Dybina\Player.h(24,1): warning C4305: -=: усечение из "double" в "float"
-C:\Users\croune\source\repos\Dybina\Dybina\Player.h(30,1): warning C4305: +=: усечение из "double" в "float"
-  Создание кода...
-  Dybina.vcxproj -> C:\Users\croune\source\repos\Dybina\x64\Debug\Dybina.exe
+﻿  main.cpp
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(48,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(50,37): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(55,1): warning C4305: -=: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(57,36): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(62,1): warning C4305: -=: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(64,34): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(69,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(71,36): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\ranja\source\repos\Dybina\Dybina\Engine.h(75): warning C4715: Engine::AllStaticObjects::checkCanPlayerMove: значение возвращается не при всех путях выполнения
+  Dybina.vcxproj -> C:\Users\ranja\source\repos\Dybina\x64\Debug\Dybina.exe

@@ -1,21 +1,39 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Texture.hpp>
+#include "SFML/Graphics.hpp"
 #include <iostream>
 #include <vector>
 
 
-#include "EngineObjects.h"
+#include "PhysicModel.h"
 #include "Player.h"
+#include "MapStaticObjects.h"
+
+#include "Engine.h"
+
 
 int main()
 {
     sf::Texture human_texture;
-    human_texture.loadFromFile("C:\\Users\\croune\\source\\repos\\Dybina\\Dybina\\user.png");
+    human_texture.loadFromFile("C:\\Users\\ranja\\source\\repos\\Dybina\\Dybina\\user.png");
 
 
-    EngineObjects::LiveUnites<Player::Player> player_unites;
+    sf::Texture wallTexture;
+    wallTexture.loadFromFile("C:\\Users\\ranja\\source\\repos\\Dybina\\Dybina\\Wall.jpg");
+
+    //EnginePlayersObjects
+    Engine::AllPlayerObjects allPlayersObjects;
+
+    //Engine All static objects
+    Engine::AllStaticObjects allStaticObjects;
+
+
+    //createYourPlayer
+    PlayersM::StandartPlayer yourPlayer(human_texture,10.0,50.0);
+    allPlayersObjects.addPlayerToVector(&yourPlayer);
     
-    Player::Your_player your_player(human_texture);
+    //createWall
+    MapObjects::Wall wall(wallTexture, 100, 50);
+    allStaticObjects.addStaticObjectToVector(&wall);
+
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
 
@@ -32,19 +50,68 @@ int main()
         }
         
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        {
-            your_player.go_left();
+        {   
+            if (allStaticObjects.checkCanPlayerMove(yourPlayer))
+            {
+                
+            }
+            else 
+            {
+                yourPlayer.moveLeft();
+            }
+            
+            std::cout<<allStaticObjects.checkCanPlayerMove(yourPlayer)<<std::endl;
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
-            your_player.go_right();
+            if (allStaticObjects.checkCanPlayerMove(yourPlayer))
+            {
+                
+                
+            }
+            else
+            {
+                yourPlayer.moveRight();
+            }
+            std::cout << allStaticObjects.checkCanPlayerMove(yourPlayer) << std::endl;
         }
         
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        {
+            if (allStaticObjects.checkCanPlayerMove(yourPlayer))
+            {
+                
+            }
+            else
+            {
+                yourPlayer.moveUp();
+            }
+            std::cout << allStaticObjects.checkCanPlayerMove(yourPlayer) << std::endl;
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        {
+            if (allStaticObjects.checkCanPlayerMove(yourPlayer))
+            {
+                
+            }
+            else
+            {
+                yourPlayer.moveDown();
+            }
+            std::cout << allStaticObjects.checkCanPlayerMove(yourPlayer) << std::endl;
+        }
+
+
         window.clear(sf::Color::Black);
 
-        window.draw(your_player.human_model);
-        
+        //Draw all players
+        allPlayersObjects.drawAllPlayers(window);
+
+        //Draw all static objects
+        allStaticObjects.drawAllStaticObjects(window);
+     
         window.display();
     }
 

@@ -1,46 +1,75 @@
 
-
-namespace Player 
-{	//player class
-	class Player 
+namespace PlayersM 
+{
+	class StandartPlayer 
 	{
+	private:
+		sf::Sprite sprite;
+		StandartPhysicModel::PhysicModel physicModel;
+
+		float pos_h;
+		float pos_v;
+
+		
+
 	public:
-		float cords_h = 0.0;
-		float cords_v = 70.0;
-		sf::Sprite human_model;
-		Player(sf::Texture& human_texture) 
+
+		float speed;
+
+		StandartPhysicModel::PhysicModel & getPhysicModel() 
 		{
-			human_model.setTexture(human_texture);
-			human_model.scale(float(0.1), float(0.1));
+			return this->physicModel;
 		}
 
-		void setCords() 
+		void setNowPosition() 
 		{
-			human_model.setPosition(this->cords_h, this->cords_v);
+			sprite.setPosition(pos_h, pos_v);
 		}
 
-		void go_left()
-		{
-			this->cords_h -= 0.1;
-			setCords();
+		sf::Sprite& getPlayerSprite() {
+			return sprite;
 		}
 
-		void go_right()
+		StandartPlayer(sf::Texture &texture,float pos_h,float pos_v)
+		{	
+			physicModel.LoadPhysicModel(pos_h, pos_h + 50, pos_v, pos_v + 110);
+			
+
+			this->pos_h = pos_h;
+			this->pos_v = pos_v;
+
+			sprite.setTexture(texture);
+			//sprite.scale(sf::Vector2f(0.1, 0.1));
+			setNowPosition();
+		}
+
+		void moveRight() 
 		{
-			this->cords_h += 0.1;
-			setCords();
+			pos_h += 0.1;
+			setNowPosition();
+			physicModel.movePhysicModelRight(0.1);
 		}
 		
-	};
-
-
-	class Your_player: public Player
-	{	
-	public:
-		Your_player(sf::Texture& human_texture) : Player(human_texture) 
+		void moveLeft()
 		{
-			
+			pos_h -= 0.1;
+			setNowPosition();
+			physicModel.movePhysicModelLeft(0.1);
 		}
-	};
 
+		void moveUp()
+		{
+			pos_v -= 0.1;
+			setNowPosition();
+			physicModel.movePhysicModelUp(0.1);
+		}
+
+		void moveDown()
+		{
+			pos_v += 0.1;
+			setNowPosition();
+			physicModel.movePhysicModelDown(0.1);
+		}
+
+	};
 }
