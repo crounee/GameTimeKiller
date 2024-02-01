@@ -6,6 +6,12 @@
 namespace StandartPhysicModel 
 {	
 
+	struct TwoCords 
+	{
+		float pos_h;
+		float pos_v;
+	};
+
 	class PhysicModel 
 	{
 
@@ -16,6 +22,8 @@ namespace StandartPhysicModel
 
 		float start_v;
 		float end_v;
+
+		float 
 
 		void LoadPhysicModel(float start_h,float end_h, float start_v,float end_v) 
 		{

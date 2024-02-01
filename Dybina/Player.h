@@ -15,6 +15,7 @@ namespace PlayersM
 	public:
 
 		float speed;
+		std::string where_go;
 
 		StandartPhysicModel::PhysicModel & getPhysicModel() 
 		{
@@ -55,6 +56,7 @@ namespace PlayersM
 			pos_h -= 0.1;
 			setNowPosition();
 			physicModel.movePhysicModelLeft(0.1);
+			
 		}
 
 		void moveUp()
@@ -62,6 +64,7 @@ namespace PlayersM
 			pos_v -= 0.1;
 			setNowPosition();
 			physicModel.movePhysicModelUp(0.1);
+		
 		}
 
 		void moveDown()
@@ -69,6 +72,11 @@ namespace PlayersM
 			pos_v += 0.1;
 			setNowPosition();
 			physicModel.movePhysicModelDown(0.1);
+		}
+
+		void setWhereGo(std::string whereGo) 
+		{
+			this->where_go = whereGo;
 		}
 
 	};

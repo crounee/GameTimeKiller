@@ -47,29 +47,31 @@ namespace Engine
 			}
 		}
 
-		bool checkCanPlayerMove(PlayersM::StandartPlayer &player) 
-		{
+		bool checkCanPlayerMove(PlayersM::StandartPlayer player) 
+		{	
+
+			
+			if (player.where_go == "left")
+			{
+				player.moveLeft();
+			}
+			else if (player.where_go == "right")
+			{
+				player.moveRight();
+			}
+			else if (player.where_go == "up")
+			{
+				player.moveUp();
+			}
+			else if (player.where_go == "down")
+			{
+				player.moveDown();
+			}
+
+
 			for (int nowStaticObject = 0; nowStaticObject < allStaticObjects.size(); nowStaticObject++) 
 			{	//for start h	
 
-				std::cout << "Player h " << player.getPhysicModel().start_h << " EnD h " << player.getPhysicModel().end_h << std::endl;
-				std::cout << "Player v " << player.getPhysicModel().start_v << " EnD v " << player.getPhysicModel().end_v << std::endl;
-
-				std::cout << "OBJ start h " << allStaticObjects.at(nowStaticObject)->getPhysicModel().start_h << " END h " << allStaticObjects.at(nowStaticObject)->getPhysicModel().end_h << std::endl;
-				std::cout << "OBJ start v " << allStaticObjects.at(nowStaticObject)->getPhysicModel().start_v << " END v " << allStaticObjects.at(nowStaticObject)->getPhysicModel().end_v <<"\n" << std::endl;
-
-				
-				if (player.getPhysicModel().start_h >= allStaticObjects.at(nowStaticObject)->getPhysicModel().start_h && player.getPhysicModel().start_h <= allStaticObjects.at(nowStaticObject)->getPhysicModel().end_h && player.getPhysicModel().start_v >= allStaticObjects.at(nowStaticObject)->getPhysicModel().start_v && player.getPhysicModel().start_v <= allStaticObjects.at(nowStaticObject)->getPhysicModel().end_v)
-				{
-
-					
-					return true;
-
-				}
-
-				else {
-					return false;
-				}
 				
 			}
 		}

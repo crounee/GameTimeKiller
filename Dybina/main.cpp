@@ -13,11 +13,11 @@
 int main()
 {
     sf::Texture human_texture;
-    human_texture.loadFromFile("C:\\Users\\ranja\\source\\repos\\Dybina\\Dybina\\user.png");
+    human_texture.loadFromFile("C:\\Users\\croune\\source\\repos\\Dybina\\Dybina\\user.png");
 
 
     sf::Texture wallTexture;
-    wallTexture.loadFromFile("C:\\Users\\ranja\\source\\repos\\Dybina\\Dybina\\Wall.jpg");
+    wallTexture.loadFromFile("C:\\Users\\croune\\source\\repos\\Dybina\\Dybina\\Wall.jpg");
 
     //EnginePlayersObjects
     Engine::AllPlayerObjects allPlayersObjects;
@@ -50,7 +50,8 @@ int main()
         }
         
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        {   
+        {
+            yourPlayer.setWhereGo("left");
             if (allStaticObjects.checkCanPlayerMove(yourPlayer))
             {
                 
@@ -64,7 +65,8 @@ int main()
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        {
+        {   
+            yourPlayer.setWhereGo("right");
             if (allStaticObjects.checkCanPlayerMove(yourPlayer))
             {
                 
@@ -78,7 +80,8 @@ int main()
         }
         
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        {
+        {   
+            yourPlayer.setWhereGo("up");
             if (allStaticObjects.checkCanPlayerMove(yourPlayer))
             {
                 
@@ -91,7 +94,8 @@ int main()
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        {
+        {   
+            yourPlayer.setWhereGo("down");
             if (allStaticObjects.checkCanPlayerMove(yourPlayer))
             {
                 
