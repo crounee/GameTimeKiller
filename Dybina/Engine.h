@@ -44,6 +44,7 @@ namespace Engine
 			for (int nowObject = 0; nowObject < allStaticObjects.size(); nowObject++)
 			{
 				window.draw(allStaticObjects.at(nowObject)->getWallSprite());
+				window.draw(allStaticObjects.at(nowObject)->getPhysicModel().getPhysicModel());
 			}
 		}
 
@@ -70,10 +71,14 @@ namespace Engine
 
 
 			for (int nowStaticObject = 0; nowStaticObject < allStaticObjects.size(); nowStaticObject++) 
-			{	//for start h	
+			{	
+				sf::FloatRect playerRect(player.getPhysicModel().getPhysicModel().getPosition(), player.getPhysicModel().getPhysicModel().getSize());
+			
+				sf::FloatRect staticObj(allStaticObjects.at(nowStaticObject)->getPhysicModel().getPhysicModel().getPosition(), allStaticObjects.at(nowStaticObject)->getPhysicModel().getPhysicModel().getSize());
 
-				
+				return staticObj.intersects(playerRect);
 			}
+			
 		}
 
 	};

@@ -33,27 +33,28 @@ namespace PlayersM
 
 		StandartPlayer(sf::Texture &texture,float pos_h,float pos_v)
 		{	
-			physicModel.LoadPhysicModel(pos_h, pos_h + 50, pos_v, pos_v + 110);
+			physicModel.LoadPhysicModel(50.0,75.0,pos_h, pos_v);
+			
 			
 
 			this->pos_h = pos_h;
 			this->pos_v = pos_v;
 
 			sprite.setTexture(texture);
-			//sprite.scale(sf::Vector2f(0.1, 0.1));
 			setNowPosition();
 		}
 
 		void moveRight() 
 		{
-			pos_h += 0.1;
+			pos_h += 0.10;
 			setNowPosition();
 			physicModel.movePhysicModelRight(0.1);
+			
 		}
 		
 		void moveLeft()
 		{
-			pos_h -= 0.1;
+			pos_h -= 0.10;
 			setNowPosition();
 			physicModel.movePhysicModelLeft(0.1);
 			
@@ -61,7 +62,7 @@ namespace PlayersM
 
 		void moveUp()
 		{
-			pos_v -= 0.1;
+			pos_v -= 0.10;
 			setNowPosition();
 			physicModel.movePhysicModelUp(0.1);
 		
@@ -69,7 +70,7 @@ namespace PlayersM
 
 		void moveDown()
 		{
-			pos_v += 0.1;
+			pos_v += 0.10;
 			setNowPosition();
 			physicModel.movePhysicModelDown(0.1);
 		}

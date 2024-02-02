@@ -31,14 +31,13 @@ namespace MapObjects
 
 		Wall(sf::Texture& texture, float pos_h, float pos_v)
 		{
-			physicModel.LoadPhysicModel(pos_h, pos_h + 100, pos_v, pos_v + 50);
+			physicModel.LoadPhysicModel(150, 50, pos_h, pos_v);
 
 
 			this->pos_h = pos_h;
 			this->pos_v = pos_v;
 
 			sprite.setTexture(texture);
-			//sprite.scale(sf::Vector2f(0.1, 0.1));
 			setNowPosition();
 		}
 
