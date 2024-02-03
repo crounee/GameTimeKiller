@@ -31,7 +31,7 @@ namespace MapObjects
 
 		Wall(sf::Texture& texture, float pos_h, float pos_v)
 		{
-			physicModel.LoadPhysicModel(150, 50, pos_h, pos_v);
+			physicModel.LoadPhysicModel(800, 50, pos_h, pos_v);
 
 
 			this->pos_h = pos_h;

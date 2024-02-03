@@ -27,7 +27,6 @@ namespace StandartPhysicModel
 		{
 			physicModel.setSize(sf::Vector2f(size_h, size_v));
 			physicModel.setPosition(sf::Vector2f(pos_h, pos_v));
-			std::cout << physicModel.getTextureRect().height << "eblan" << std::endl;
 			this->pos_h = pos_h;
 			this->pos_v = pos_v;
 		}

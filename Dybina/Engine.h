@@ -20,11 +20,12 @@ namespace Engine
 			for (int nowObject = 0; nowObject < allplayers.size(); nowObject++) 
 			{
 				window.draw(allplayers.at(nowObject)->getPlayerSprite());
+				
+
 			}
 		}
 
 	};
-
 
 
 	class AllStaticObjects
@@ -44,8 +45,12 @@ namespace Engine
 			for (int nowObject = 0; nowObject < allStaticObjects.size(); nowObject++)
 			{
 				window.draw(allStaticObjects.at(nowObject)->getWallSprite());
-				window.draw(allStaticObjects.at(nowObject)->getPhysicModel().getPhysicModel());
+				//window.draw(allStaticObjects.at(nowObject)->getPhysicModel().getPhysicModel());
 			}
+
+			//Draw size
+			//std::cout << allStaticObjects.size()<<std::endl;
+
 		}
 
 		bool checkCanPlayerMove(PlayersM::StandartPlayer player) 
@@ -76,10 +81,84 @@ namespace Engine
 			
 				sf::FloatRect staticObj(allStaticObjects.at(nowStaticObject)->getPhysicModel().getPhysicModel().getPosition(), allStaticObjects.at(nowStaticObject)->getPhysicModel().getPhysicModel().getSize());
 
-				return staticObj.intersects(playerRect);
+				if (staticObj.intersects(playerRect) == true) { return true; };
 			}
 			
+			return false;
 		}
 
+		bool GetHitStatus(Bullets::StandartBullet *bullet) 
+		{
+			for (int nowStaticObject = 0; nowStaticObject < allStaticObjects.size(); nowStaticObject++)
+			{
+				sf::FloatRect playerRect(bullet->getPhysicModel().getPhysicModel().getPosition(), bullet->getPhysicModel().getPhysicModel().getSize());
+
+				sf::FloatRect staticObj(allStaticObjects.at(nowStaticObject)->getPhysicModel().getPhysicModel().getPosition(), allStaticObjects.at(nowStaticObject)->getPhysicModel().getPhysicModel().getSize());
+
+				return staticObj.intersects(playerRect);
+			}
+		}
+
+
+	};
+
+	class AllBullets
+	{
+	private:
+		std::vector<Bullets::StandartBullet*> allBulletsObjects;
+
+	public:
+
+		void addBulletObjectToVector(Bullets::StandartBullet* BulletObject)
+		{
+			allBulletsObjects.push_back(BulletObject);
+		}
+
+		void drawAllBulletsObjects(sf::RenderWindow& window)
+		{
+			for (int nowObject = 0; nowObject < allBulletsObjects.size(); nowObject++)
+			{
+
+				window.draw(allBulletsObjects.at(nowObject)->getPlayerSprite());
+				//window.draw(allBulletsObjects.at(nowObject)->getPhysicModel().getPhysicModel());
+
+			}
+			//std::cout << allBulletsObjects.size() << std::endl;
+		}
+
+		void moveAllBullets()
+		{
+
+			for (int nowObject = 0; nowObject < allBulletsObjects.size(); nowObject++)
+			{
+
+				allBulletsObjects.at(nowObject)->MoveBullet();
+
+			}
+
+		}
+
+		void checkOutSideBullets(AllStaticObjects& allStaticObjects)
+		{
+			for (int nowObject = 0; nowObject < allBulletsObjects.size(); nowObject++)
+			{
+
+				if (allBulletsObjects.at(nowObject)->getPosition().x >= 1080
+					|| allBulletsObjects.at(nowObject)->getPosition().x <= 0
+					|| allBulletsObjects.at(nowObject)->getPosition().y >= 1080
+					|| allBulletsObjects.at(nowObject)->getPosition().y <= 0)
+				{
+
+					allBulletsObjects.erase(allBulletsObjects.begin() + nowObject);
+					nowObject--;
+				}
+				else if (allStaticObjects.GetHitStatus(allBulletsObjects.at(nowObject))) 
+				{
+					allBulletsObjects.erase(allBulletsObjects.begin() + nowObject);
+					nowObject--;
+				}
+
+			}
+		}
 	};
 }

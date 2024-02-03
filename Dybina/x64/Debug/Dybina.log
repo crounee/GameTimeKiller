@@ -1,11 +1,15 @@
 ﻿  main.cpp
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(49,1): warning C4305: +=: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(51,37): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(57,1): warning C4305: -=: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(59,36): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(65,1): warning C4305: -=: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(67,34): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(73,1): warning C4305: +=: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Player.h(75,36): warning C4305: аргумент: усечение из "double" в "float"
-C:\Users\ranja\source\repos\Dybina\Dybina\Engine.h(82): warning C4715: Engine::AllStaticObjects::checkCanPlayerMove: значение возвращается не при всех путях выполнения
-  Dybina.vcxproj -> C:\Users\ranja\source\repos\Dybina\x64\Debug\Dybina.exe
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(81,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(83,37): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(89,1): warning C4305: -=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(91,36): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(105,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Player.h(107,36): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Bullet.h(55,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Bullet.h(57,37): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Bullet.h(63,1): warning C4305: -=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Bullet.h(65,36): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Guns.h(54,1): warning C4305: +=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Guns.h(61,1): warning C4305: -=: усечение из "double" в "float"
+C:\Users\croune\source\repos\Dybina\Dybina\Engine.h(100): warning C4715: Engine::AllStaticObjects::GetHitStatus: значение возвращается не при всех путях выполнения
+  Dybina.vcxproj -> C:\Users\croune\source\repos\Dybina\x64\Debug\Dybina.exe
